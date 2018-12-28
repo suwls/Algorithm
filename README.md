@@ -1,1 +1,1 @@
-#Algorighm
+Algorithm study
