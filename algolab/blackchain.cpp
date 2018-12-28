@@ -7,3 +7,23 @@
 //
 
 #include <stdio.h>
+
+int main()
+{
+    int numTestCases, cnt;
+    long long data;
+    scanf("%d", &numTestCases);
+    
+    while(numTestCases--)
+    {
+        scanf("%lld", &data);
+        cnt = 0;
+        while(data > cnt+1)
+        {
+            data -= cnt;
+            data = (data/2) - 1;
+            cnt++;
+        }
+        printf("%d\n", cnt);
+    }
+}

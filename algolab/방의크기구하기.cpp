@@ -4,7 +4,13 @@
 //
 //  Created by 이수진 on 2018. 10. 2..
 //  Copyright © 2018년 이수진. All rights reserved.
-//
+
+
+// scanf 로 char 이차원 배열을 입력받을때 공백까지 입력받아서
+// 입력이 제대로 이루어지지 않아 cin을 사용함
+
+// 공백으로 구분하는 입력 = scanf
+// 연속 입력 = cin
 
 #include <iostream>
 #include <algorithm>
@@ -76,6 +82,5 @@ int main()
             cout << count_arr[i] << " ";
         }
         cout << endl;
-
     }
 }

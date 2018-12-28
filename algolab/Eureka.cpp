@@ -8,43 +8,30 @@
 
 #include <stdio.h>
 
-int data;
-
-int eureka(int data, int count, int n)
+int eureka(int data, int n ,int count)
 {
-    if(count == 3 && data == 0)
+    if(data == 0 && count ==3)
     {
-        printf("0 count : %d, data : %d, n : %d \n", count, data, n);
-        return 1;
+        printf("1 data : %d n : %d count : %d \n", data, n, count);
+       return 1;
     }
-    
-    
-    if(count < 3 && data > 0)
-    {
-        
-        int result = 0;
-        for(int i = n; data > 0 && count <3 ; i++)
-        {    
-            printf("ㅏ count : %d, data : %d, n : %d \n", count, data, n);
-            data -= (i * (i + 1)) / 2;
-            printf("uu count : %d, data : %d, n : %d \n", count, data, n);
-            result = eureka(data, count + 1, i);
-            printf("%d\n",result);
-            if(result)
-                break;
-            
-            
-        }
-        printf("1 count : %d, data : %d, n : %d \n", count, data, n);
-        return result;
-    }
-    else
-    {
-        printf("2 count : %d, data : %d, n : %d \n", count, data, n);
-       // data += (n* (n+ 1)) / 2;
+    else if(n >45){
+        printf("2 data : %d n : %d count : %d \n", data, n, count);
         return 0;
     }
-        
+    else if((data == 0 && count != 3) || (data != 0 && count ==3))
+    {
+        printf("3 before data : %d n : %d count : %d \n", data, n, count);
+        data += (n*(n+1))/2 ;
+        printf("3 after data : %d n : %d count : %d \n", data, n, count);
+        return eureka(data,n+1,count-1);
+    }
+    else{
+        printf("4 before data : %d n : %d count : %d \n", data, n, count);
+        data -= (n*(n+1))/2;
+        printf("4 after : %d n : %d count : %d \n", data, n, count);
+        return eureka(data, n+1, count+1);
+    }
 }
 
 int main(){
@@ -55,10 +42,13 @@ int main(){
     
     while (numTestCases--) {
         
-        //int data;
+        int data;
         scanf("%d", &data);
         
-        printf("%d\n", eureka(data, 0, 1));
+        int result = eureka(data, 1, 0);
         
+        printf("%d\n", result);
     }
 }
+
+

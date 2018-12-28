@@ -7,3 +7,15 @@
 //
 
 #include <stdio.h>
+#include <string>
+
+using namespace std;
+
+int N;
+char number[3] = {'1','2','3'};
+
+int main(){
+    
+    scanf("%d", &N);
+    
+}

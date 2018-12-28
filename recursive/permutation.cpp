@@ -26,16 +26,16 @@ void permuteString(char str[], unsigned long begin, unsigned long end)
     
     unsigned long range = end - begin;
     
-    printf("begin : %lu end : %lu range : %lu\n", begin, end, range);
+    //printf("begin : %lu end : %lu range : %lu\n", begin, end, range);
     
     if(range == 1)
         printf("%s\n", str);
     else{
         for(i = 0; i < range; i++)
         {
-            swap(str[begin],str[begin+i]);
+            swap(str[begin],str[begin+i]);  //그대로도 찍고
             permuteString(str, begin+1, end);
-            swap(str[begin],str[begin+i]);
+            swap(str[begin],str[begin+i]);  // 바꾼것도 찍고
         }
     }
 }

@@ -12,7 +12,6 @@
 using namespace std;
 
 int main(){
-    
     ifstream instream;
     instream.open("input.txt");
     
@@ -22,8 +21,7 @@ int main(){
     while(numTestCases--)
     {
         int arr[101];
-        int cnt = 0;
-        int temp=0;
+        int cnt = 0, temp = 0;
         
         instream>> n >> k;
         if (instream.peek() == EOF)break;
@@ -31,18 +29,15 @@ int main(){
         for(int i = 0; i < n; i++)
             instream>>arr[i];
         
-        for(int i = 0; i < n; i++)
-        {
-            for(int j = i; j < n; j++)
-            {
+        for(int i = 0; i < n; i++){
+            for(int j = i; j < n; j++){
                 if(arr[j] > temp)
                 {
                     temp = arr[j];
                     arr[j]=0;
                 }
             }
-            if(temp != 0)
-                cnt++;
+            if(temp != 0) cnt++;
             temp = 0;
         }
         

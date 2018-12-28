@@ -4,7 +4,12 @@
 //
 //  Created by 이수진 on 2018. 9. 28..
 //  Copyright © 2018년 이수진. All rights reserved.
-//
+
+
+
+// dfs를 이용한 백트래킹
+
+
 
 #include <stdio.h>
 
@@ -18,9 +23,10 @@ int func(int index, int sum, int count)
 {
     for(int i = index; i < N; i++)
     {
-        sum += number[i];
+        
         if(!visited[i])
         {
+            sum += number[i];
             if(sum == S)
                 count ++;
             visited[i] = 1;

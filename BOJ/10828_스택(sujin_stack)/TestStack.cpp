@@ -1,8 +1,15 @@
+/*----------------------------
+ * boj 10828번 스택            *
+ *                           *
+ * 직접 스택 구현                *
+ *                           *
+ * 스택명 : sujin_stack        *
+-----------------------------*/
+
 #include <iostream>
 #include "sujin_stack.h"
 
 using namespace std;
-
 
 int main(void)
 {
